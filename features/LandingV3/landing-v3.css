@@ -15,9 +15,9 @@
   --red: #a9262c;
   --orange: #e57536;
   --yellow: #f9c926;
-  --accent-light: #005981;
+  --accent-light: #b84f18;
   --accent-light-ink: #fff;
-  --accent-dark: #2ab0a0;
+  --accent-dark: #3b9fd0;
   --accent-dark-ink: #0b1a24;
   --accent: var(--accent-light);
   --accent-ink: var(--accent-light-ink);
@@ -986,7 +986,7 @@ section {
 @media (max-width:600px){.lv3 .infra-groups{grid-template-columns:1fr}}
 
 /* brand mark tokens: hemispheres from the pair of the day, trunk/outline from the theme */
-:root { --lh: #005981; --rh: #2ab0a0; --trunk: #1d2230; --outline: #ffffff; }
+:root { --lh: #3b9fd0; --rh: #e57536; --trunk: #1d2230; --outline: #ffffff; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --trunk: #eef3f6; } }
 :root[data-theme='dark'] { --trunk: #eef3f6; }
 .lv3 .hero .mark { --trunk: #0b1a24; }
