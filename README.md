@@ -82,7 +82,7 @@ This repository houses the modern **Next.js web portal and landing platform**, r
 ## 📁 Repository Structure
 
 ```text
-brainlife.hugo_v2/
+landing-next/
 ├── app/                        # Next.js App Router root & routes
 │   ├── layout.tsx              # Root HTML layout with providers & smooth scroll
 │   ├── page.tsx                # Main Landing Page entrypoint
@@ -122,8 +122,8 @@ brainlife.hugo_v2/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/brainlife/brainlife.hugo_v2.git
-cd brainlife.hugo_v2
+git clone https://github.com/brainlife/landing-next.git
+cd landing-next
 ```
 
 ### 2. Install Dependencies

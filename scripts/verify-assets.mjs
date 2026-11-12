@@ -15,8 +15,8 @@ const expectedBasePath =
   envBasePath !== undefined
     ? envBasePath
     : process.env.NODE_ENV === 'production'
-    ? '/brainlife.hugo_v2'
-    : '/brainlife.hugo_v2';
+    ? '/landing-next'
+    : '/landing-next';
 
 console.log('🔍 Running static asset verification...');
 console.log(`📁 Target directory: ${outDir}`);

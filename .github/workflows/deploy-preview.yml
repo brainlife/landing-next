@@ -1,6 +1,6 @@
 # Staging deploy for review, meant to run in a FORK of this repository (for example
-# <you>/brainlife.hugo_v2), never in brainlife/brainlife.hugo_v2 itself: in a fork, GitHub Pages
-# serves https://<you>.github.io/brainlife.hugo_v2/ — same base path as production, so the build is
+# <you>/landing-next), never in brainlife/landing-next itself: in a fork, GitHub Pages
+# serves https://<you>.github.io/landing-next/ — same base path as production, so the build is
 # identical — while production (deploy.yml, main branch) is untouched.
 #
 # Safety: this workflow only deploys when the repository is NOT the production one, and only from
@@ -27,7 +27,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.repository != 'brainlife/brainlife.hugo_v2'
+    if: github.repository != 'brainlife/landing-next'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -61,7 +61,7 @@ jobs:
           path: ./out
 
   deploy:
-    if: github.repository != 'brainlife/brainlife.hugo_v2'
+    if: github.repository != 'brainlife/landing-next'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
