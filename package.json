@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-prod": "NEXT_PUBLIC_BASE_PATH=\"\" NEXT_PUBLIC_SITE_URL=https://brainlife.io npm run build",
     "start": "next start",
     "lint": "eslint",
     "test:assets": "node scripts/verify-assets.mjs",

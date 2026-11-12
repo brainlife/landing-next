@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>403 - Forbidden | Brainlife.io</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico">
+  <!-- Self-contained, styled to match the 404 page (app/not-found.tsx). nginx serves this at
+       arbitrary URLs, so it must not depend on relative paths or the Next bundle. -->
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center; color: #fff; background: #080e1c; overflow: hidden;
+      font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    body::before {
+      content: ""; position: fixed; top: -150px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(38,147,216,.15) 0%, rgba(92,197,216,.05) 40%, transparent 70%);
+    }
+    body::after {
+      content: ""; position: fixed; bottom: 10%; right: -100px; width: 600px; height: 600px; pointer-events: none;
+      background: radial-gradient(circle, rgba(139,92,246,.08) 0%, transparent 70%);
+    }
+    main { position: relative; z-index: 1; max-width: 680px; }
+    h1 {
+      margin: 0 0 16px; font-size: clamp(90px, 22vw, 170px); font-weight: 900; line-height: 1; letter-spacing: -.04em;
+      background: linear-gradient(to bottom, #fff 30%, #5cc5d8 75%, #2693d8 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    h2 { margin: 0 0 16px; font-size: clamp(26px, 5vw, 38px); font-weight: 800; letter-spacing: -.02em; }
+    p { margin: 0 0 40px; font-size: clamp(15px, 2vw, 17px); line-height: 1.65; color: rgba(255,255,255,.72); }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 700; letter-spacing: .04em; color: #fff; text-decoration: none;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2);
+      transition: all .2s cubic-bezier(.16,1,.3,1);
+    }
+    .btn:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.4); transform: translateY(-2px); }
+    .btn.primary { background: #2693d8; border-color: #2693d8; padding: 0 28px; }
+    .btn.primary:hover { background: #1c7bb9; box-shadow: 0 0 25px rgba(38,147,216,.55); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>403</h1>
+    <h2>Access Restricted</h2>
+    <p>You don't have permission to view this resource. If you think this is a mistake, try signing in or head back to the homepage.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">&larr;&nbsp; Return to Home</a>
+      <a class="btn" href="https://connects.brainlife.io/dashboard" target="_blank" rel="noopener noreferrer">Launch Portal &nearr;</a>
+      <a class="btn" href="https://brainlife.github.io/docs-next/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </div>
+  </main>
+</body>
+</html>
