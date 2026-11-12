@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>403 - Forbidden | Brainlife.io</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/favicon.ico">
   <!-- Self-contained, styled to match the 404 page (app/not-found.tsx). nginx serves this at
-       arbitrary URLs, so it must not depend on relative paths or the Next bundle. -->
+       arbitrary URLs, so it must not depend on relative paths or the Next bundle.
+       No <link rel="icon">: files in public/ aren't base-path prefixed (scripts/verify-assets.mjs
+       fails the GitHub Pages build on it), and browsers fall back to /favicon.ico on their own. -->
   <style>
     * { box-sizing: border-box; }
     body {
