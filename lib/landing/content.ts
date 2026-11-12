@@ -139,7 +139,7 @@ export const PREVIEW = {
   label: 'Preview build · not the live site',
   feedbackLabel: 'Leave feedback',
   /** Opens a pre-filled GitHub issue; {state} is replaced with the hero/pair the reviewer is looking at. */
-  feedbackHref: 'https://github.com/brainlife/brainlife.hugo_v2/issues/new?title=Landing%20page%20feedback&labels=landing-v3&body='
+  feedbackHref: 'https://github.com/brainlife/landing-next/issues/new?title=Landing%20page%20feedback&labels=landing-v3&body='
     + encodeURIComponent('**What I was looking at:** {state}\n\n**What works:**\n\n**What does not:**\n\n**Suggestions:**\n'),
 };
 

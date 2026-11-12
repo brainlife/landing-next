@@ -1,18 +1,29 @@
-import LandingV3Page from '@/features/LandingV3/LandingV3Page';
 import type { Metadata } from 'next';
-import { getAssetPath } from '@/lib/basePath';
+import { BASE_PATH } from '@/lib/basePath';
 
-const title = 'brainlife.io · Brain data across scales';
-const description = 'Open platform to analyze, share and publish brain data across scales: electron and light microscopy, PS-OCT, MRI, fMRI, EEG and MEG. Reproducible Apps on shared supercomputers, results in the browser, publications with DOIs.';
+// Entry point for brainlife.io/. Replaces the old Hugo index.html:
+// logged-in users (a "jwt" in localStorage, set by the warehouse UI) go to /projects,
+// everyone else to the landing page at /about. Runs as an inline script so it fires
+// while the HTML is parsed, before React loads.
+const ABOUT = `${BASE_PATH}/about/`;
+const isPreview = process.env.NEXT_PUBLIC_PREVIEW === '1';
+
+// Preview/staging deploys have no /projects route, so they always go to the landing page.
+const script = isPreview
+    ? `document.location=${JSON.stringify(ABOUT)};`
+    : `try{document.location=localStorage.getItem("jwt")?"/projects":${JSON.stringify(ABOUT)};}catch(e){document.location=${JSON.stringify(ABOUT)};}`;
 
 export const metadata: Metadata = {
-    title,
-    description,
-    openGraph: { title, description, images: [getAssetPath('/og-image.png')] },
-    // staging deploys (NEXT_PUBLIC_PREVIEW=1) must not be indexed
-    ...(process.env.NEXT_PUBLIC_PREVIEW === '1' ? { robots: { index: false, follow: false } } : {}),
+    ...(isPreview ? { robots: { index: false, follow: false } } : {}),
 };
 
-export default function Home() {
-    return <LandingV3Page />;
+export default function Entry() {
+    return (
+        <>
+            <script dangerouslySetInnerHTML={{ __html: script }} />
+            <noscript>
+                <a href={ABOUT}>Continue to brainlife.io</a>
+            </noscript>
+        </>
+    );
 }

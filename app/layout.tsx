@@ -31,7 +31,6 @@ export const metadata: Metadata = {
       { url: getAssetPath('/favicon.ico') },
     ],
     apple: [
-      { url: getAssetPath('/apple-icon.png'), sizes: '180x180', type: 'image/png' },
       { url: getAssetPath('/logo.png'), sizes: '512x512', type: 'image/png' },
     ],
     shortcut: [getAssetPath('/logo.png')],
@@ -70,7 +69,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="icon" type="image/png" sizes="192x192" href={getAssetPath('/icon-192.png')} />
         <link rel="icon" type="image/x-icon" href={getAssetPath('/favicon.ico')} />
         <link rel="shortcut icon" href={getAssetPath('/logo.png')} />
-        <link rel="apple-touch-icon" sizes="180x180" href={getAssetPath('/apple-icon.png')} />
         <link rel="apple-touch-icon" href={getAssetPath('/logo.png')} />
         <link rel="manifest" href={getAssetPath('/manifest.json')} />
       </head>
