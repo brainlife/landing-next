@@ -23,8 +23,6 @@ import {
     Compass,
     Database,
     Cpu,
-    Smartphone,
-    Users,
     Layers,
     LifeBuoy,
 } from 'lucide-react';
@@ -56,22 +54,6 @@ const QUICK_LINKS = [
         isExternal: true,
         icon: Layers,
         badge: 'Utility',
-    },
-    {
-        title: 'Brainlife Mobile',
-        desc: 'Monitor supercomputing pipelines and execution logs from your phone.',
-        href: '/mobile',
-        isExternal: false,
-        icon: Smartphone,
-        badge: 'App',
-    },
-    {
-        title: 'Our Team & Story',
-        desc: 'Meet the researchers, developers, and global community behind Brainlife.',
-        href: '/about',
-        isExternal: false,
-        icon: Users,
-        badge: 'Community',
     },
     {
         title: 'Help & Documentation',
