@@ -987,11 +987,12 @@ section {
 @media (max-width:600px){.lv3 .infra-groups{grid-template-columns:1fr}}
 
 /* brand mark tokens: hemispheres from the pair of the day, trunk/outline from the theme */
-:root { --lh: #3b9fd0; --rh: #e57536; --trunk: #1d2230; --outline: #ffffff; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --trunk: #eef3f6; } }
-:root[data-theme='dark'] { --trunk: #eef3f6; }
-.lv3 .hero .mark { --trunk: #0b1a24; }
-.lv3 .mark.light { --outline: transparent; }
+:root { --lh: #3b9fd0; --rh: #e57536; --trunk: #1d2230; --outline: #ffffff; --mark-rim: url(#bl-rim-light); }
+/* On dark grounds the trunk takes the ground line's gray so it stays visible. */
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --trunk: #c8cdd4; --mark-rim: url(#bl-rim-dark); } }
+:root[data-theme='dark'] { --trunk: #c8cdd4; --mark-rim: url(#bl-rim-dark); }
+.lv3 .hero .mark { --trunk: #c8cdd4; --mark-rim: url(#bl-rim-dark); }
+.lv3 .mark .rim { filter: var(--mark-rim); }
 
 /* hero layout known before hydration, from data-hero set by the pick script */
 html[data-hero='field'] .lv3 .hero-grid { grid-template-columns: 1fr; align-content: end; min-height: 560px; }
