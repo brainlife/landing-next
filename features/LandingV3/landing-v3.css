@@ -15,7 +15,7 @@
   --red: #a9262c;
   --orange: #e57536;
   --yellow: #f9c926;
-  --accent-light: #b84f18;
+  --accent-light: #3d6a92;
   --accent-light-ink: #fff;
   --accent-dark: #3b9fd0;
   --accent-dark-ink: #0b1a24;
@@ -24,7 +24,7 @@
   --link: var(--accent-light);
   --hero-accent: var(--accent-dark);
   --hero-accent-ink: var(--accent-dark-ink);
-  --font: var(--font-geist-sans), 'Geist', system-ui, sans-serif;
+  --font: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
   --mono: var(--font-geist-mono), 'Geist Mono', ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) {
@@ -158,7 +158,7 @@
   height: 42px;
   padding: 0;
   border: 1px solid rgba(238, 243, 246, 0.35);
-  border-radius: 8px;
+  border-radius: 6px;
   background: transparent;
   cursor: pointer;
   flex-direction: column;
@@ -297,7 +297,7 @@
   position: relative;
   min-width: 0;
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
 }
 .lv3 .stage.side {
@@ -344,7 +344,7 @@
 .video {
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
   background: #0b1f2d;
   border: 1px solid var(--hero-line);
@@ -482,7 +482,7 @@ section {
 .lv3 .tile .img {
   position: relative;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   background: var(--bg-2);
   border: 1px solid var(--line);
@@ -621,7 +621,7 @@ section {
   scroll-snap-align: start;
   background: var(--bg-2);
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
   min-width: 0;
   display: flex;
@@ -849,13 +849,14 @@ section {
   font-size: 0.82rem;
   padding: 5px 11px;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
   color: var(--ink);
 }
 .lv3 .app {
   background: var(--bg-2);
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 16px 16px 14px;
   min-width: 0;
   display: grid;
@@ -971,7 +972,7 @@ section {
 .lv3 .pub .thumb .clip-fallback{top:auto;right:auto;bottom:10px;left:10px;width:auto;height:auto;z-index:4;text-decoration:underline;text-underline-offset:3px}
 .lv3 .thumb .clip{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);border-radius:6px;object-fit:cover;z-index:3}
 /* tools ecosystem */
-.lv3 .tool{flex:0 0 min(260px,78vw);scroll-snap-align:start;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0;display:grid;gap:6px;align-content:start;color:var(--ink);text-decoration:none}
+.lv3 .tool{flex:0 0 min(260px,78vw);scroll-snap-align:start;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0;display:grid;gap:6px;align-content:start;color:var(--ink);text-decoration:none}
 .lv3 .tool .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .lv3 .tool b{font-weight:600;font-size:1rem}
 .lv3 .tool p{font-size:.88rem;color:var(--muted)}
@@ -986,11 +987,13 @@ section {
 @media (max-width:600px){.lv3 .infra-groups{grid-template-columns:1fr}}
 
 /* brand mark tokens: hemispheres from the pair of the day, trunk/outline from the theme */
-:root { --lh: #3b9fd0; --rh: #e57536; --trunk: #1d2230; --outline: #ffffff; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --trunk: #eef3f6; } }
-:root[data-theme='dark'] { --trunk: #eef3f6; }
-.lv3 .hero .mark { --trunk: #0b1a24; }
-.lv3 .mark.light { --outline: transparent; }
+:root { --lh: #3b9fd0; --rh: #e57536; --trunk: #1d2230; --outline: #ffffff; --mark-rim: url(#bl-rim-light); --trunk-rim: none; }
+/* On dark grounds the ink trunk gets a white rim, like the canopy, so it stays visible. */
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --mark-rim: url(#bl-rim-dark); --trunk-rim: url(#bl-trunk-rim); } }
+:root[data-theme='dark'] { --mark-rim: url(#bl-rim-dark); --trunk-rim: url(#bl-trunk-rim); }
+.lv3 .hero .mark { --mark-rim: url(#bl-rim-dark); --trunk-rim: url(#bl-trunk-rim); }
+.lv3 .mark .rim { filter: var(--mark-rim); }
+.lv3 .mark .trunk { filter: var(--trunk-rim); }
 
 /* hero layout known before hydration, from data-hero set by the pick script */
 html[data-hero='field'] .lv3 .hero-grid { grid-template-columns: 1fr; align-content: end; min-height: 560px; }
@@ -1036,7 +1039,7 @@ html[data-hero='field'] .lv3 .stage.placeholder { display: none; }
   .lv3 .nav .btn {
     margin: 8px max(16px, env(safe-area-inset-left, 0px)) 0;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 6px;
   }
   .lv3 .site-band {
     position: relative;

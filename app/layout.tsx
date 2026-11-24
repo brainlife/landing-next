@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Geist_Mono } from "next/font/google";
 import { getAssetPath } from "@/lib/basePath";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// DM Sans, the brainlife-lite app font, so the site and the app read as one product.
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -62,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <link rel="icon" type="image/png" sizes="512x512" href={getAssetPath('/logo.png')} />

@@ -13,7 +13,7 @@ export const PAIRS: Pair[] = [
   { name: 'red · orange', left: '#a9262c', right: '#e57536', accentLight: '#a9262c', accentDark: '#e57536', accentDarkInk: '#0b1a24' },
   { name: 'orange · yellow', left: '#e57536', right: '#f9c926', accentLight: '#b84f18', accentDark: '#f9c926', accentDarkInk: '#0b1a24' },
   { name: 'teal · yellow', left: '#2ab0a0', right: '#f9c926', accentLight: '#167a6e', accentDark: '#f9c926', accentDarkInk: '#0b1a24' },
-  { name: 'light blue · orange', left: '#3b9fd0', right: '#e57536', accentLight: '#b84f18', accentDark: '#3b9fd0', accentDarkInk: '#0b1a24' },
+  { name: 'light blue · orange', left: '#3b9fd0', right: '#e57536', accentLight: '#3d6a92', accentDark: '#3b9fd0', accentDarkInk: '#0b1a24' },
 ];
 
 /**
