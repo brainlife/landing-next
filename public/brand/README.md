@@ -23,7 +23,7 @@ The light-blue · orange pair as used in the app sidebar, footer and favicon (br
 - `brainlife-mark-lightblue-orange-app-on-light.svg` — white rim around the canopy with a thin gray outline (`#8f99a5`) and soft shadow, so the rim reads on white
 - `brainlife-mark-lightblue-orange-app-on-dark.svg` — white rim with a soft shadow, for dark backgrounds
 
-Both have a light-gray ground line (`#c8cdd4`) under the trunk, wider than the canopy and fading at the ends, so the trunk has a visible base. On dark backgrounds the trunk is the same light gray (`#c8cdd4`); on light backgrounds it stays ink (`#1d2230`). The landing header and footer use this mark too (`lib/landing/brandMark.ts`). The trunk is drawn outside the rim filter to keep its edges clean. The canvas is wider than the original mark (viewBox `-19 0 185.79 143.6`) to fit the ground line.
+Both have a light-gray ground line (`#c8cdd4`) under the trunk, wider than the canopy and fading at the ends, so the ink trunk has a visible base on dark backgrounds. The trunk is drawn outside the rim filter to keep its edges clean. The canvas is wider than the original mark (viewBox `-19 0 185.79 143.6`) to fit the ground line.
 
 ## App colors (brainlife-lite `src/themeMui.ts`)
 
