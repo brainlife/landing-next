@@ -38,8 +38,9 @@ jobs:
           cache: npm
       - id: pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
+        # No static_site_generator: it would write a blank next.config.js that Next.js loads instead of
+        # next.config.ts, dropping trailingSlash (about/ → about.html, a 404). next.config.ts already sets
+        # output: export, the base path (NEXT_PUBLIC_BASE_PATH below) and unoptimized images.
       - run: npm ci
       - name: Install ffmpeg (video posters)
         uses: FedericoCarboni/setup-ffmpeg@v3
