@@ -22,7 +22,7 @@ export default function SiteHeader() {
   }, [open]);
   return (
     <div className={open ? 'site open' : 'site'}>
-      <a className="brand" href={getAssetPath('/')} aria-label="brainlife.io home">
+      <a className="brand" href={getAssetPath('/about/')} aria-label="brainlife.io home">
         <BrandMark /><span>brainlife<i>.io</i></span>
       </a>
       <button type="button" className="menu-btn" aria-expanded={open} aria-controls="site-nav"
