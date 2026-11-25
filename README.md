@@ -1,173 +1,97 @@
-<div align="center">
-  <img src="assets/logo.svg" alt="Brainlife Logo" width="90" height="90" />
-  <h1>Brainlife Web Portal</h1>
-  <p><strong>Cloud-powered neuroscience computing, FAIR data governance, and AI-assisted neuroimaging pipelines.</strong></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/brainlife-mark-lightblue-orange-app-on-dark.svg">
+    <img src="public/brand/brainlife-mark-lightblue-orange-app-on-light.svg" alt="brainlife.io" width="140">
+  </picture>
+</p>
 
-  <p>
-    <a href="https://brainlife.io"><img src="https://img.shields.io/badge/Production-brainlife.io-2693d8.svg" alt="Brainlife.io" /></a>
-    <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-16.3-black?logo=next.js" alt="Next.js" /></a>
-    <a href="https://react.dev"><img src="https://img.shields.io/badge/React-19-61dafb?logo=react" alt="React 19" /></a>
-    <a href="https://chakra-ui.com"><img src="https://img.shields.io/badge/Chakra--UI-v2-319795?logo=chakraui" alt="Chakra UI" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.brainlife.mobile"><img src="https://img.shields.io/badge/Google%20Play-Android%20App-34a853?logo=googleplay" alt="Google Play" /></a>
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
-  </p>
-</div>
+<h1 align="center">landing-next</h1>
 
----
+<p align="center">
+  The brainlife.io landing site. Brain data across scales: one place to analyze, share and publish it.
+</p>
 
-## 🧠 About Brainlife
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-active-brightgreen.svg" alt="Status: active">
+  <a href="https://brainlife.io"><img src="https://img.shields.io/badge/brainlife.io-site-3b9fd0.svg" alt="brainlife.io"></a>
+  <a href="https://brainlife.io/docs"><img src="https://img.shields.io/badge/Docs-brainlife.io%2Fdocs-005981.svg" alt="Documentation"></a>
+  <a href="https://doi.org/10.1038/s41592-024-02237-2"><img src="https://img.shields.io/badge/DOI-10.1038%2Fs41592--024--02237--2-e57536.svg" alt="Nature Methods paper"></a>
+</p>
 
-[Brainlife.io](https://brainlife.io) is a free, open-source cloud computing platform for neuroscience data analysis. It empowers researchers to standardize, process, visualize, and share complex neuroimaging datasets (MRI, MEG, EEG, and microscopy) across distributed high-performance computing (HPC) clusters and cloud providers.
+## 🧠 At a glance
 
-This repository houses the modern **Next.js web portal and landing platform**, replacing legacy static engines with a dynamic, reactive, and beautifully animated frontend.
+| | |
+|---|---|
+| 🧭 **What** | Public landing site for brainlife.io: the home page (`/`) and About (`/about`), with live landing data fetched at build time |
+| 🧱 **Stack** | Next.js 16 (App Router, static export) · React 19 · TypeScript · Chakra UI · Tailwind CSS · Framer Motion / GSAP · Three.js · Leaflet |
+| 🌐 **Deploys to** | GitHub Pages at [brainlife.github.io/landing-next](https://brainlife.github.io/landing-next/) on every push to `main` ([`deploy.yml`](.github/workflows/deploy.yml)); `npm run build-prod` builds for `https://brainlife.io` |
+| 🎨 **Brand** | Marks, palette and usage in [`public/brand/`](public/brand) |
 
----
+## 🚀 Quick start
 
-## ✨ Features & Architecture
-
-### 🚀 Landing Page (`/`)
-* **Hero Visual Stage**: High-impact introduction featuring interactive neuroimaging background stages.
-* **Stage-to-Process Pipeline**: Interactive step-by-step pipeline diagram demonstrating raw data ingestion, BIDS curation, and Slurm HPC dispatch.
-* **Expanding Media Reel**: High-definition video showcase featuring **dMRI Track Density Imaging**, **PS-OCT 3D Volumetric Imaging**, and **Axonal Micro-Connectomics**.
-* **Ecosystem Products Grid**:
-  * **ezBIDS**: Automated in-browser DICOM/NIfTI to BIDS converter with AI metadata curation.
-  * **ezGov**: FAIR data governance, access controls, and IRB compliance workflows.
-  * **DICOMpare**: Multi-subject header difference inspector to identify protocol drift.
-  * **SKAI**: AI Copilot for neuroscience—dispatching Slurm pipelines, querying open datasets, and analyzing outputs via conversational NLP.
-* **Interactive Ecosystem Graph**: Visual topology showing interconnected computing apps, datasets, pipelines, and publications.
-* **Sponsors & Compute Infrastructure**: Backed by **NSF**, **NIH**, **UT Austin**, **Indiana University**, **AWS**, **Microsoft Azure**, and national supercomputing centers.
-
----
-
-### 👥 Team & Lab Community (`/team`)
-* **Interactive Timeline Journey**: Chronological milestones and history of Brainlife development.
-* **Member Directory & Alumni Network**: Filterable roster by research domain (Neuroscience, Engineering, Cloud HPC, UI/UX).
-* **Member Inspection Modal**: Detailed modal drawer highlighting biographies, publications, GitHub, LinkedIn, and Google Scholar links.
-
----
-
-### 📱 Brainlife Mobile (`/mobile`)
-* **Mobile Companion Showcase**: Monitor long-running compute jobs, receive push notifications for pipeline completions, and explore datasets on iOS and Android.
-* **Store Links**: Direct access to the [Google Play Store](https://play.google.com/store/apps/details?id=com.brainlife.mobile&pcampaignid=web_share) and Apple App Store.
-
----
-
-### 🔬 Users & Scientific Impact (`/users`)
-* **Global Researcher Map**: Interactive Leaflet map displaying active neuroscience labs worldwide.
-* **Research Spotlights**: Featured publications and breakthrough studies powered by Brainlife pipelines.
-* **Persona Matrix**: Tailored workflows for Principal Investigators, Postdocs, Clinicians, and Students.
-
----
-
-### ℹ️ About & Governance (`/about`)
-* Comprehensive overview of Brainlife's mission, open science governance, institutional partnerships, and citations.
-
----
-
-## 🛠️ Tech Stack
-
-| Domain | Technology |
-| :--- | :--- |
-| **Framework** | [Next.js 16 (App Router)](https://nextjs.org/) |
-| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
-| **UI Components** | [Chakra UI v2](https://chakra-ui.com/) + [Emotion](https://emotion.sh/) |
-| **Styling** | Vanilla CSS + [Tailwind CSS v4](https://tailwindcss.com/) |
-| **Motion & Animation** | [Framer Motion](https://www.framer.com/motion/) + [GSAP 3 (ScrollTrigger)](https://greensock.com/gsap/) |
-| **Smooth Scrolling** | [Lenis](https://lenis.darkroom.engineering/) |
-| **3D & Mapping** | [Three.js](https://threejs.org/) + [Leaflet](https://leafletjs.com/) |
-| **Iconography** | [Lucide React](https://lucide.dev/) |
-
----
-
-## 📁 Repository Structure
-
-```text
-landing-next/
-├── app/                        # Next.js App Router root & routes
-│   ├── layout.tsx              # Root HTML layout with providers & smooth scroll
-│   ├── page.tsx                # Main Landing Page entrypoint
-│   ├── about/                  # About page route
-│   ├── mobile/                 # Mobile app showcase route
-│   ├── team/                   # Team & Alumni route
-│   └── users/                  # Users, Publications & Research route
-├── assets/                     # Vector SVGs, product mockups, and images
-│   ├── landing/                # Visual media, reels, and screenshots
-│   ├── team/                   # Team member avatars & photos
-│   ├── logo.svg                # Brainlife core emblem
-│   └── skai.svg                # SKAI AI Copilot vector logo
-├── components/                 # Global UI widgets & navigation
-│   ├── Navbar.tsx              # Sticky dynamic glassmorphic header
-│   ├── Footer.tsx              # Portal footer & quick links
-│   └── NewProjectModal.tsx     # Project creation modal trigger
-├── contexts/                   # Global React state (AuthContext, etc.)
-├── features/                   # Modular feature domains
-│   ├── Landing/                # Landing page sub-sections & visualizers
-│   ├── Team/                   # Team timeline, member grid & modal
-│   ├── Mobile/                 # Mobile features, preview & CTA
-│   └── Users/                  # User map, persona matrix & spotlight
-├── lib/                        # Helpers, math utilities, and constants
-├── public/                     # Static public assets served at root
-└── theme.ts                    # Custom Chakra UI dark-mode theme & tokens
-```
-
----
-
-## ⚡ Getting Started
-
-### Prerequisites
-
-* **Node.js**: `v20.x` or later (LTS recommended)
-* **Package Manager**: `npm`, `pnpm`, or `yarn`
-
-### 1. Clone the Repository
+You need Node.js 20 or later.
 
 ```bash
-git clone https://github.com/brainlife/landing-next.git
-cd landing-next
+git clone https://github.com/brainlife/landing-next && cd landing-next
+npm ci
+npm run dev            # http://localhost:3000
 ```
 
-### 2. Install Dependencies
+| Command | What it does |
+|---|---|
+| `npm run build` | Static export to `out/` (base path `/landing-next` in production, override with `NEXT_PUBLIC_BASE_PATH`) |
+| `npm run build-prod` | Build for the root of `https://brainlife.io` |
+| `npm run landing:data` | Refresh the landing data (counts, publications) used by the build |
+| `npm test` | Check assets and landing data |
+| `npm run lint` | ESLint |
 
-```bash
-npm install
-```
+To preview a branch before review, run [`deploy-preview.yml`](.github/workflows/deploy-preview.yml) in your fork (it never deploys from this repository).
 
-### 3. Start Development Server
+## 🗂️ Layout
 
-```bash
-npm run dev
-```
+`app/` holds the routes (`page.tsx` home, `about/`; folders starting with `_` are parked pages that are not routed), `features/` the page sections, `components/` the navbar and footer, `public/brand/` the brainlife marks and `scripts/` the data and asset checks. Agent notes: [AGENTS.md](AGENTS.md).
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the application with hot-reloading.
+## 🔗 Related repositories
 
-### 4. Build for Production
+| Repository | Role |
+|---|---|
+| [brainlife-lite](https://github.com/brainlife/brainlife-lite) | The brainlife.io web app |
+| [docs-next](https://github.com/brainlife/docs-next) | New documentation site |
+| [ezbids](https://github.com/brainlife/ezbids) | Neuroscience data to BIDS, from instruments to shared datasets |
 
-```bash
-npm run build
-npm start
-```
+## 📚 Citing
 
-### 5. Lint & Code Quality
+If you use brainlife.io in your work, please cite:
 
-```bash
-npm run lint
-```
+> Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
----
+## 💰 Funding
+
+brainlife.io is developed by the Pestilli Lab at The University of Texas at Austin and is publicly funded; acknowledging that support helps keep it running.
+
+<details>
+<summary>Grants (verified list, from <a href="https://github.com/brainlife/ezbids/blob/master/CREDITS.md#funding">ezbids CREDITS.md</a>)</summary>
+
+| Funder | Award | Title |
+|---|---|---|
+| NIH NINDS | [U24NS140384](https://reporter.nih.gov/project-details/U24NS140384) | BRAIN CONNECTS: The Axonal Projectome EXchange (APEX) |
+| NIH NIMH | [R01MH126699](https://reporter.nih.gov/project-details/R01MH126699) | Community-driven development of BIDS |
+| NIH NIBIB | [R01EB030896](https://reporter.nih.gov/project-details/R01EB030896) | CRCNS US-France: open science and cloud computing of MEEG |
+| NIH NIBIB | [R01EB029272](https://reporter.nih.gov/project-details/R01EB029272) | CRCNS US-France: lowering the barrier of entry to network neuroscience |
+| NSF | [BCS-1636893](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1636893), [2148729](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2148729) | BD Spokes: Advanced Computational Neuroscience Network |
+| NSF | [BCS-1734853](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1734853), [2203524](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2203524) | NCS-FO: Connectome mapping algorithms |
+| NSF | [IIS-1912270](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912270), [2148700](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2148700) | CRCNS US-German: DataLad |
+| NSF | [ACI-1916518](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1916518) | BD Hubs: Midwest Big Data Hub |
+| Wellcome Trust | [226486](https://grantnav.threesixtygiving.org/grant/360G-Wellcome-226486_Z_22_Z) | Developing an international governance framework to advance global brain and mental health data equity and innovation |
+
+</details>
 
 ## 🤝 Contributing
 
-We welcome contributions from the scientific and open-source communities!
+Issues and pull requests are welcome in this repository. For help using brainlife.io, see the [documentation](https://brainlife.io/docs).
 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/amazing-feature`.
-3. Commit your changes with clear messages: `git commit -m 'feat: add amazing feature'`.
-4. Push to your branch: `git push origin feature/amazing-feature`.
-5. Open a Pull Request for review.
+## ⚖️ License
 
----
+This repository does not include a license file yet.
 
-## 📄 License & Funding
-
-* **License**: Distributed under the [MIT License](LICENSE).
-* **Funding**: Brainlife is supported by the **National Science Foundation (NSF)** (Awards 1734853, 1636653, 1916518) and the **National Institutes of Health (NIH)** (Awards R01EB029272, R01EB030896).
+<p align="center"><sub>brainlife.io · Brain data across scales. One place to analyze, share and publish it. · The University of Texas at Austin</sub></p>
